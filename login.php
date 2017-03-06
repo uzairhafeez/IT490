@@ -18,7 +18,7 @@ require_once('get_host_info.inc');
 require_once('rabbitMQLib.inc');
 
 $user = $_POST['username'];
-$passwd = $_POST['password'];
+$passwd = sha1($_POST['password']);
 
 $client = new rabbitMQClient("testRabbitMQ.ini","testServer");
 echo "got here  ";

@@ -18,9 +18,12 @@ require_once('get_host_info.inc');
 require_once('rabbitMQLib.inc');
 
 $username = $_POST['username'];
-$password = $_POST['password'];
+$password = sha1($_POST['password']);
 $firstname = $_POST['firstname'];
 $lastname = $_POST['lastname'];
+$email = $_POST['email'];
+
+
 
 $client = new rabbitMQClient("testRabbitMQ.ini","testServer");
 echo "got here  ";
@@ -31,6 +34,7 @@ $request['username'] = "$username";
 $request['password'] = "$password";
 $request['firstname'] = "$firstname";
 $request['lastname'] = "$lastname";
+$request['email'] = "$email";
 
 //$request['message'] = "HI";
 

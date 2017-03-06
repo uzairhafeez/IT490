@@ -1,6 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
+<script>
+
+function Check_pwd()
+{
+  pass1 = document.getElementById("password");
+  conpass = document.getElementById("confirmpassword");
+
+  span1 = document.getElementById("warn");
+  span1.innerHTML = "";
+
+  if(pass1.value != conpass.value)
+  {
+    conpass.value = "";
+    alert("The passwords do not match!");
+    span1.innerHTML = "Error! Passwords do not match!";
+  }
+
+}
+
+</script>
+
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -30,7 +53,8 @@
         <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
 
 	<label for="confirmpassword" class="sr-only">Confirm Password</label>
-	<input type="password" name="confirmpassword" id="confirmpassword" class="form-control" placeholder="Confirm Password" required>
+	<input type="password" name="confirmpassword" id="confirmpassword" class="form-control" onblur="Check_pwd()" placeholder="Confirm Password" required>
+	<span id= "warn" style = " float: right; color:#FF0000; font-weight:bold;"></span>
 
 	<label for="firstname" class="sr-only">FirstName</label> 
         <input type="text" name="firstname" id="firstname" class="form-control" placeholder="First Name" required> 
@@ -42,11 +66,9 @@
         <input type="text" name="email" id="email" class="form-control" placeholder="Email" required> 
 
 
-	 <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label><br>
-	<a href="login.html">Already a member? Sign In<br></a>
+	 <div class="checkbox"> <br>
+
+	<a href="index.html">Already a member? Sign In<br></a>
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit" id="submitButton">Register</button>
       </form>
