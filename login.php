@@ -17,8 +17,17 @@ require_once('path.inc');
 require_once('get_host_info.inc');
 require_once('rabbitMQLib.inc');
 
+
+$salt = "abcd";
+
 $user = $_POST['username'];
-$passwd = sha1($_POST['password']);
+
+//$passwd = sha1($_POST['password']);
+$passwd = $_POST['password'];
+
+$saltpw = $salt.$passwd;
+$saltpw = sha1($saltpw);
+
 
 $client = new rabbitMQClient("testRabbitMQ.ini","testServer");
 echo "got here  ";
@@ -26,7 +35,11 @@ echo "got here  ";
 $request = array();
 $request['type'] = "login";
 $request['username'] = "$user";
-$request['password'] = "$passwd";
+
+//$request['password'] = "$passwd";
+$request['password'] = "$saltpw";
+
+
 //$request['message'] = "HI";
 
 $response = $client->send_request($request);
