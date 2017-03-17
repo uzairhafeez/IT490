@@ -51,12 +51,21 @@ $request['email'] = "$email";
 $response = $client->send_request($request);
 //$response = $client->publish($request);
 
+if ($response['returnCode'] == 1)
+{
+	header('Location: index.html');
 
-echo "client received response: ".PHP_EOL;
-print_r($response);
-echo "\n\n";
+}
+else{
+	print_r($response);
+	echo "\n\n";
 
-echo $argv[0]." END".PHP_EOL;
+}
+//echo "client received response: ".PHP_EOL;
+//print_r($response);
+//echo "\n\n";
+
+//echo $argv[0]." END".PHP_EOL;
 
 ?>
 
