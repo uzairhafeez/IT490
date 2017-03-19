@@ -17,27 +17,26 @@
   </head>
 
   <body>
-<center><img src="http://media.empr.com/images/2016/04/14/drugrecallro_957800.png?format=png&zoom=1&quality=70&anchor=middlecenter&mode=pad" alt="drugRecallLogo" style="width:500px;height:300px;"></center>
 
     <div class="container">
 
-      <form class="form-signin" action="welcome.php" method="post">
-        <h2 class="form-signin-heading">Search Form</h2>
-        <label for="drugName" class="sr-only"></label>
-        <input type="text" name="drugName" id="drugName" class="form-control" placeholder="Prescription Name" required autofocus><br>
-	<a href="login.html">Sign In<br></a>
-        <a href="registration.html">New User? Register Here!<br></a>
+      <form class="form-signin" action="login.php" method="post">
+        <h2 class="form-signin-heading">Goliath</h2>
+        <label for="username" class="sr-only">Username</label>
+        <input type="text" name="username" id="username" class="form-control" placeholder="Enter Username" required autofocus>
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+	 <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label><br>
+	<a href="registration.html">New User? Click here to Register!<br></a>
         </div>
-        <center><button class="btn btn-lg btn-primary btn-block" type="submit" id="submitButton">Search</button></center>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" id="submitButton">Sign in</button>
       </form>
 
-<article>
-
-</article>
     </div> <!-- /container -->
 
-
-</article>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
