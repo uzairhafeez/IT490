@@ -67,7 +67,16 @@ else{
 
 //echo $argv[0]." END".PHP_EOL;
 
+</body>
+echo "client received response: ".PHP_EOL;
+print_r($response);
+echo "\n\n";
+
+echo $argv[0]." END".PHP_EOL;
+
 ?>
+
+
 </body>
 </html>
 
