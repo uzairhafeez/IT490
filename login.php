@@ -46,11 +46,13 @@ $response = $client->send_request($request);
 //$response = $client->publish($request);
 
 
+
 if ($response['returnCode'] == 0)
 {
-        session_start();
+	session_start();
 	$_SESSION['username'] = "$user";
 	$_SESSION['firstname'] = $response['firstname'];
+	$_SESSION['id'] = $response['id'];
 	header('Location: userProfile.php');
 
 }
@@ -66,9 +68,6 @@ else{
 //echo $argv[0]." END".PHP_EOL;
 
 ?>
-
-
 </body>
-
 </html>
 
